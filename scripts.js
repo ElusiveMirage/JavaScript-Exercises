@@ -10,37 +10,55 @@ function myFunction() {
 
 function checkBiggest()
 {
-  num1 = document.getElementById("num1").value;
-  num2 = document.getElementById("num2").value;
-  num3 = document.getElementById("num3").value;
+  var num1 = parseInt(document.getElementById("num1").value);
+  var num2 = parseInt(document.getElementById("num2").value);
+  var num3 = parseInt(document.getElementById("num3").value);
 
   let text;
 
   if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
     text = "Input not valid";
-  } 
+  }
   else
   {
-    if(num1>num2 && num1>num3)
+    if(num1 > num2 & num1 > num3)
     {
       text = num1;
     }
-    if(num2>num1 && num2>num3)
+    else if(num2 > num1 & num2 > num3)
     {
       text = num2;
     }
-    if(num3>num1 && num3>num2)
+    else if(num3 > num1 & num3 > num2)
     {
       text = num3;
     }
     document.getElementById("answer1").innerHTML = "Result :" + text;
+  } 
+}
+
+function checkEvenOdd()
+{
+  var evenodd = parseInt(document.getElementById("evenodd").value);
+  let text;
+  
+  if(evenodd % 2 === 0)
+  {
+        text = "true";
   }
+  else
+  {
+    text = "false";
+  }
+    
+  document.getElementById("answer2").innerHTML = "Result :" + text;
 }
 
 function checkPrime()
 {
-  var prime = document.getElementById("prime").value;
+  var prime = parseInt(document.getElementById("prime").value);
   let text;
+  
   if (isNaN(prime) || prime < 0) {
     text = "Input not valid";
   } 
@@ -59,11 +77,9 @@ function checkPrime()
       if(prime % x === 0)
       {
         text = "false";
+        break;
       }
-      else
-      {
-        text = "true";
-      }
+      text = "true";
     }
   }
   document.getElementById("answer4").innerHTML = "Result :" + text;
@@ -76,12 +92,32 @@ function startCountdown()
 
         seconds--;
 
-        if(seconds % 2 === 0)
+        if(seconds % 2 === 0 && seconds != 0)
         {
           document.getElementById("timer").innerHTML = seconds;
         }
 
     }, 1000);
+}
+
+function sumof()
+{
+  var sumof = parseInt(document.getElementById("sumof").value);
+  var result = 0;
+  let text;
+  
+  if (isNaN(sumof) || sumof < 0) {
+    text = "Input not valid";
+  } 
+
+  for(var x = 1; x <= sumof; x++)
+  {
+      result += x;
+  }
+
+  text = result;
+
+  document.getElementById("answer5").innerHTML = "Result :" + text;
 }
 
 function Factorial() {

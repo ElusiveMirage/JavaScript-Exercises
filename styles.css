@@ -6,6 +6,12 @@ h1 {
   font-weight: normal;
 }
 
+h2 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: bold;
+  color: #2b8edf;
+}
+
 p {
   color:black;
   font-family:Arial, Helvetica, sans-serif;
