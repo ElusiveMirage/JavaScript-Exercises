@@ -18,6 +18,12 @@ p {
   font-size:12px;
 }
 
+#ex2 {
+  color:black;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:12px;
+}
+
 .topnav {
 background-color: #333;
 overflow: hidden;

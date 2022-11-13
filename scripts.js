@@ -144,3 +144,58 @@ function Factorial() {
   }
   document.getElementById("answer6").innerHTML = "Result :" + text;
 }
+
+function mysteryGift()
+{
+  var giftPrice = 50;
+  var price = parseInt(document.getElementById("mysteryGift").value);
+  let text;
+  
+  if (isNaN(price)) {
+    text = "Input not valid";
+  } 
+
+  if(price < giftPrice)
+  {
+    text = "Nope, too low"
+  }
+  else if(price > giftPrice)
+  {
+    text = "Nope, too high"
+  }
+  else if(price === giftPrice)
+  {
+    text = "You got it!"
+  }
+
+  document.getElementById("ex1").innerHTML = text;
+}
+
+function mysteryGift2()
+{
+  var giftPrice = 50;
+  var price = parseInt(document.getElementById("mysteryGift2").value);
+  let list = document.getElementById("ex2");
+  let text;
+  
+  if (isNaN(price)) {
+    text = "Input not valid";
+  } 
+
+  if(price < giftPrice)
+  {
+    text = "Nope, too low"
+  }
+  else if(price > giftPrice)
+  {
+    text = "Nope, too high"
+  }
+  else if(price === giftPrice)
+  {
+    text = "You got it!"
+  }
+
+  var listItem = document.createElement("li");
+  listItem.appendChild(document.createTextNode(price + ", " + text));
+  list.appendChild(listItem);
+}
