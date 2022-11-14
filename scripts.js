@@ -199,3 +199,77 @@ function mysteryGift2()
   listItem.appendChild(document.createTextNode(price + ", " + text));
   list.appendChild(listItem);
 }
+
+function addHobby()
+{
+  var hobby = document.getElementById("hobby").value;
+  let list = document.getElementById("ex4");
+  let option = document.createElement("option");
+
+  option.text = hobby;
+  option.text = hobby;
+
+  list.appendChild(option);
+}
+
+function removeHobby()
+{
+  var hobby = document.getElementById("hobby").value;
+  let list = document.getElementById("ex4");
+
+  for (var i=0; i<list.length; i++) {
+    if (list.options[i].value === hobby)
+    list.remove(i);
+  }
+}
+
+function checkLeapYear()
+{
+  var year = parseInt(document.getElementById("leapyear").value);
+  let text;
+  
+  if (isNaN(year) || year < 0) {
+    text = "Input not valid";
+  } 
+
+  if(year % 4 === 0)
+  {
+    if(year % 100 === 0)
+    {
+      if(year % 100 === 400)
+      {
+        text = "Is a leap year"
+      }
+      else
+      {
+        text = "Not a leap year"
+      }
+    }
+    else
+    {
+      text = "Is a leap year"
+    }
+  }
+  else
+  {
+    text = "Not a leap year"
+  }
+
+  document.getElementById("ex5").innerHTML = text;
+}
+
+function calculateCircleArea()
+{
+  var radius = parseInt(document.getElementById("radius").value);
+  var area = 0;
+  let text;
+  
+  if (isNaN(radius) || radius < 0) {
+    text = "Input not valid";
+  } 
+
+  area = Math.PI * (radius * radius);
+  text = area;
+
+  document.getElementById("ex6").innerHTML = "Result : " + text.toFixed(2);
+}
