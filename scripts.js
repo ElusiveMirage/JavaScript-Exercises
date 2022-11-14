@@ -273,3 +273,58 @@ function calculateCircleArea()
 
   document.getElementById("ex6").innerHTML = "Result : " + text.toFixed(2);
 }
+
+function convertCelsius()
+{
+  var celsius = parseInt(document.getElementById("celsius").value);
+  var fahrenheit = 0;
+  let text;
+  
+  if (isNaN(celsius) || celsius < 0) {
+    text = "Input not valid";
+  } 
+
+  fahrenheit = (celsius * 9/5) + 32;
+  text = fahrenheit;
+
+  document.getElementById("ex7").innerHTML = celsius.toFixed(2) + "°C is " + text.toFixed(2) + "°F";
+}
+
+function convertFahrenheit()
+{
+  var fahrenheit = parseInt(document.getElementById("fahrenheit").value);
+  var celsius = 0;
+  let text;
+  
+  if (isNaN(fahrenheit) || fahrenheit < 0) {
+    text = "Input not valid";
+  } 
+
+  celsius = (fahrenheit -32) * 5/9;
+  text = celsius;
+
+  document.getElementById("ex7").innerHTML = fahrenheit.toFixed(2) + "°F is " + text.toFixed(2) + "°C";
+}
+
+function displayURL()
+{
+  let text;
+  text = document.URL;
+  document.getElementById("ex8").innerHTML = text;
+}
+
+function reverseInput()
+{
+  var reverse = document.getElementById("reverse").value;
+  let text;
+  
+  var splitString = reverse.split("");
+
+  var reverseArray = splitString.reverse();
+
+  var joinArray = reverseArray.join("");
+
+  text = joinArray;
+
+  document.getElementById("ex9").innerHTML = "Result : " + joinArray;
+}
